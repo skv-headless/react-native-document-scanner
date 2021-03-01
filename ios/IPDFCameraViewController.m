@@ -396,14 +396,15 @@
                  {
                      enhancedImage = [self correctPerspectiveForImage:enhancedImage withFeatures:rectangleFeature];
 
-                     UIGraphicsBeginImageContext(CGSizeMake(enhancedImage.extent.size.height, enhancedImage.extent.size.width));
-                     [[UIImage imageWithCIImage:enhancedImage scale:1.0 orientation:UIImageOrientationRight] drawInRect:CGRectMake(0,0, enhancedImage.extent.size.height, enhancedImage.extent.size.width)];
-                     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+//                     UIGraphicsBeginImageContext(CGSizeMake(enhancedImage.extent.size.height, enhancedImage.extent.size.width));
+//                     [[UIImage imageWithCIImage:enhancedImage scale:1.0 orientation:UIImageOrientationRight] drawInRect:CGRectMake(0,0, enhancedImage.extent.size.height, enhancedImage.extent.size.width)];
+//                     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
                      UIImage *initialImage = [UIImage imageWithData:imageData];
-                     UIGraphicsEndImageContext();
+//                     UIGraphicsEndImageContext();
 
                      [weakSelf hideGLKView:NO completion:nil];
-                     completionHandler(image, initialImage, rectangleFeature);
+                     completionHandler(initialImage, initialImage, rectangleFeature);
+//                     completionHandler(image, initialImage, rectangleFeature);
                  }
              } else {
                  [weakSelf hideGLKView:NO completion:nil];

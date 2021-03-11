@@ -653,13 +653,12 @@ public class OpenNoteCameraView extends JavaCameraView implements PictureCallbac
         boolean isIntent = false;
         Uri fileUri = null;
         String folderName = "documents";
-        File folder = new File(Environment.getExternalStorageDirectory().toString() + "/" + folderName);
+        File folder = new File(mContext.getCacheDir() + "/" + folderName);
         if (!folder.exists()) {
             folder.mkdirs();
             Log.d(TAG, "wrote: created folder " + folder.getPath());
         }
-        fileName = Environment.getExternalStorageDirectory().toString() + "/" + folderName + "/" + UUID.randomUUID()
-                + ".jpg";
+        fileName = mContext.getCacheDir() + "/" + folderName + "/" + UUID.randomUUID() + ".jpg";
 
         Mat endDoc = new Mat(Double.valueOf(doc.size().width).intValue(), Double.valueOf(doc.size().height).intValue(),
                 CvType.CV_8UC4);

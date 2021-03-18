@@ -621,11 +621,11 @@ public class OpenNoteCameraView extends JavaCameraView implements PictureCallbac
                     mCamera.autoFocus(new Camera.AutoFocusCallback() {
                         @Override
                         public void onAutoFocus(boolean success, Camera camera) {
-                            if (success) {
+                            //if (success) {
                                 mCamera.takePicture(null, null, pCallback);
                                 blinkScreen();
                                 blinkScreenAndShutterSound();
-                            }
+                            //}
                             if (attemptToFocus) {
                                 return;
                             } else {

@@ -40,6 +40,7 @@ RCT_EXPORT_METHOD(capture) {
 - (UIView*) view {
     if (_scannerView) {
         [_scannerView setEnableBorderDetection:YES];
+        _scannerView.stableCounter = 0;
     } else {
         _scannerView = [[DocumentScannerView alloc] init];
     }
